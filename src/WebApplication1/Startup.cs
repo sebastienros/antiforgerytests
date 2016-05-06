@@ -35,7 +35,7 @@ namespace WebApplication1
                 builder.AddUserSecrets();
             }
 
-            builder.AddEnvironmentVariables();
+            //builder.AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 

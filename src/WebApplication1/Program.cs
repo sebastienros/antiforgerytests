@@ -14,7 +14,7 @@ namespace WebApplication1
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseDefaultHostingConfiguration(args)
+                //.UseDefaultHostingConfiguration(args)
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
