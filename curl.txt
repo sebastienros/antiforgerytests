@@ -1,0 +1,26 @@
+Sample curl commands for later use
+
+#### Valid Cookie + valid Header
+```
+curl -v --cookie ".AspNetCore.Antiforgery.vQi99gZ-mPE=CfDJ8GZI8RKOxv1PjOaoTYN-5Lyt98DPkS8qEN9EKPSbceQdQiXkD2RJxkzkcEauHAEq01qK88esv8FrdNggAOfmvPeNvgKm44iRMiEqiYoCVkb_Ha_L8Bezpu8d7dAUuv1_krC1rheJV-3CBicKBRfqntk" --header "RequestVerificationToken: CfDJ8GZI8RKOxv1PjOaoTYN-5Lz9zqFM3iRrR_zNiNA14AxFlO0ltkhpO6goGpYBahdRuo8qXpfxm_yQG3jRCtEGQ_C_VjW2pLrIbA5WXegA4f8radCronRbUF86elVSc_pLDjd-IIP_g_J0hErEUMVhp1M" -d "" -X POST http://localhost:4002/Comment
+```
+
+#### Valid Cookie + valid Form data
+```
+curl -v --cookie ".AspNetCore.Antiforgery.vQi99gZ-mPE=CfDJ8GZI8RKOxv1PjOaoTYN-5Lyt98DPkS8qEN9EKPSbceQdQiXkD2RJxkzkcEauHAEq01qK88esv8FrdNggAOfmvPeNvgKm44iRMiEqiYoCVkb_Ha_L8Bezpu8d7dAUuv1_krC1rheJV-3CBicKBRfqntk" --data "__RequestVerificationToken=CfDJ8GZI8RKOxv1PjOaoTYN-5Lz9zqFM3iRrR_zNiNA14AxFlO0ltkhpO6goGpYBahdRuo8qXpfxm_yQG3jRCtEGQ_C_VjW2pLrIbA5WXegA4f8radCronRbUF86elVSc_pLDjd-IIP_g_J0hErEUMVhp1M" -X POST http://localhost:4002/Comment
+```
+
+#### Invalid Cookie + matching invalid Header
+```
+curl -v --cookie ".AspNetCore.Antiforgery.vQi99gZ-mPE=fDJ8GZI8RKOxv1PjOaoTYN-5Lyt98DPkS8qEN9EKPSbceQdQiXkD2RJxkzkcEauHAEq01qK88esv8FrdNggAOfmvPeNvgKm44iRMiEqiYoCVkb_Ha_L8Bezpu8d7dAUuv1_krC1rheJV-3CBicKBRfqntk" --header "RequestVerificationToken: fDJ8GZI8RKOxv1PjOaoTYN-5Lz9zqFM3iRrR_zNiNA14AxFlO0ltkhpO6goGpYBahdRuo8qXpfxm_yQG3jRCtEGQ_C_VjW2pLrIbA5WXegA4f8radCronRbUF86elVSc_pLDjd-IIP_g_J0hErEUMVhp1M" -d "" -X POST http://localhost:4002/Comment
+```
+
+#### Valid form data only
+```
+curl -v --data "__RequestVerificationToken=cfDJ8GZI8RKOxv1PjOaoTYN-5Lz9zqFM3iRrR_zNiNA14AxFlO0ltkhpO6goGpYBahdRuo8qXpfxm_yQG3jRCtEGQ_C_VjW2pLrIbA5WXegA4f8radCronRbUF86elVSc_pLDjd-IIP_g_J0hErEUMVhp1M" -X POST http://localhost:4002/Comment
+```
+
+#### Valid Cookie only
+```
+curl -v --cookie ".AspNetCore.Antiforgery.vQi99gZ-mPE=CfDJ8GZI8RKOxv1PjOaoTYN-5Lyt98DPkS8qEN9EKPSbceQdQiXkD2RJxkzkcEauHAEq01qK88esv8FrdNggAOfmvPeNvgKm44iRMiEqiYoCVkb_Ha_L8Bezpu8d7dAUuv1_krC1rheJV-3CBicKBRfqntk" --data "" -X POST http://localhost:4002/Comment
+```
